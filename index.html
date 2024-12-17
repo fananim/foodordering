@@ -1064,23 +1064,6 @@
       document.querySelectorAll(".add-to-cart").forEach((button) => {
         button.addEventListener("click", function (e) {
           e.preventDefault();
-
-          // Logika untuk menambahkan item ke keranjang
-          const name = this.getAttribute("data-name");
-          const price = parseFloat(this.getAttribute("data-price"));
-          const quantity = parseInt(
-            this.previousElementSibling.querySelector(".input-number").value
-          );
-
-          const existingItem = cartItems.find((item) => item.name === name);
-          if (existingItem) {
-            existingItem.quantity += quantity;
-          } else {
-            cartItems.push({ name, price, quantity });
-          }
-
-          updateCart();
-
           // Tampilkan pop-up
           showPopup();
         });
